@@ -1,0 +1,23 @@
+開發中需要對python編寫的程序進行打包，生成exe文件以便未安裝python以及lib依賴的用戶進行使用。由於開發環境中的lib文件複雜冗餘，打包時導致文件很大，遂考慮在虛擬環境中進行打包。
+
+解決方案：conda + pyinstaller
+
+過程：
+
+　　conda create --name work_space python=(python version ex:3.7.3)
+
+　　conda activate
+
+　　conda install packages
+
+　　conda install pyinstaller == pip install pyinstaller
+
+　　pyinstaller -Fw C:\User\Documents\pyinstall\ocr.py　　# 打包完成　　
+
+　　conda deactivate　　#關閉虛擬環境
+
+　　conda delete -n work_space --all　　#刪除一個已有環境
+
+　　conda env list
+
+　　conda list　　#查看環境列表以及包列表
